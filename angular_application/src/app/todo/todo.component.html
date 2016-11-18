@@ -1,0 +1,15 @@
+<div id="newTodo" class="ui action input">
+    <input [(ngModel)]="newTodoDescription">
+    <button class="ui button right attached icon green" (click)="onNewTodoClick()">Add</button>
+</div>
+
+<div id="todos">
+    <div class="ui segment" *ngIf="todos.length == 0">
+        <p>Keine Todos vorhanden!</p>
+    </div>
+    <div *ngIf="todos.length > 0">
+        <div class="ui segment" *ngFor="let todo of todos">
+            <p>{{todo.description}}</p>
+        </div>
+    </div>
+</div>
